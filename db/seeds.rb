@@ -21,3 +21,20 @@ Player.create(
   losses: 0,
   url: "https://bitmakerhq.s3.amazonaws.com/alexa/production/student/photo/1328/medium_Bence_Kiss.jpg"
 )
+
+Game.create(
+  gamedate: Time.now,
+  player1_id: 1,
+  player2_id: 2,
+  p1points: 9,
+  p2points: 11
+)
+
+GamePlayer.create(
+  game_id: 1,
+  player_id: 1
+)
+GamePlayer.create(
+  game_id: 1,
+  player_id: 2
+)

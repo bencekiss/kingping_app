@@ -1,0 +1,9 @@
+<h1>All games in place</h1>
+
+<% @games.each do |game| %>
+  <p>
+    <% first_player = Player.find(game.player1_id).name %>
+    <% second_player = Player.find(game.player2_id).name %>
+    <%= game.gamedate %> | <%= first_player %> <%= game.p1points %> : <%= game.p2points %> <%= second_player %>
+  </p>
+<% end %>
