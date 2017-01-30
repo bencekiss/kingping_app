@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Player.create(
+  nickname: "Dgibbins",
+  name: "Ryan Anderson",
+  wins: 0,
+  losses: 0,
+  url: "https://bitmakerhq.s3.amazonaws.com/alexa/production/student/photo/1322/medium_Ryan_Anderson.jpg"
+)
+
+Player.create(
+  nickname: "bkiss",
+  name: "Bence Kiss",
+  wins: 0,
+  losses: 0,
+  url: "https://bitmakerhq.s3.amazonaws.com/alexa/production/student/photo/1328/medium_Bence_Kiss.jpg"
+)
