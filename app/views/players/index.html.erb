@@ -3,6 +3,6 @@
 <% @players.each do |player| %>
   <p>
     <%= player.name %> | AKA: <%= player.nickname %> | Wins: <%= player.wins %> | Losses: <%= player.losses %><br>
-    <%= image_tag(player.url) %>
+    <%= image_tag(player.url), 'players/player.id' %>
   </p>
 <% end %>
