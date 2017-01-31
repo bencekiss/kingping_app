@@ -36,7 +36,7 @@ class PlayersController < ApplicationController
   def destroy
     @player = Player.find(params[:id])
     @player.destroy
-    redirect_to picutres_url
+    redirect_to players
 
   end
 
