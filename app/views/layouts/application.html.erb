@@ -13,17 +13,14 @@
       <h1 class="headlines">Bitmaker KingPing</h1>
       <nav class="navbar">
         <ul class="navlist">
-          <li class="navlistelement">
-            <%= link_to "Players", players_path %>
-          </li>
-          <li>
-            <%= link_to "Games People Play", games_url %>
-          </li>
-          
+          <li class="navlistelement"><%= link_to "Players", players_path %></li>
+          <li class="navlistelement"><%= link_to "View Matches", games_url %></li>
+          <li class="navlistelement"><%= link_to "Create a Game", new_game_path %></li>
+          <li class="navlistelement"><a href="https://www.sanrio.com/categories/hello-kitty">Don't Click!</a></li>
         </ul>
       </nav>
-
     </header>
     <%= yield %>
+    <img src="/images/brady-pp.jpg" >
   </body>
 </html>
