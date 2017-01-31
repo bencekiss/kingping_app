@@ -9,7 +9,7 @@ class Player < ApplicationRecord
     (Player.all).each do |player|
       if player.wins >= 1
         score = player.wins / (player.wins.to_f + player.losses.to_f)
-        ind_score = [score.round(2), player.name, player.url]
+        ind_score = [score.round(2), player.name, player.url, player.id]
         board << ind_score
       end
     end

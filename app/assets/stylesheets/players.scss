@@ -1,12 +1,38 @@
 // Place all the styles related to the players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container{
+  width: 100%;
+}
+.leaderboard{
+  background-color: #D4E7FA;
+  // display: inline;
+  float: right;
+  max-width: 100%;
+  width: 30%; //400px
+  // position: absolute;
+  border-radius: 30px;
+  text-align: center;
+}
+.leaderboard h1{
+  border-radius: 30px;
+  margin-top: 0;
+}
+.leaderboard table{
+  width: 100%;
+}
+.leaderboard thead{
+  font-weight: bold;
+}
+
+
 .player-profile{
-  width: initial;
+  width: 30%;
   display: inline-block;
   text-align: center;
   font-weight: bolder;
-  float: left;
+  float: right;
 }
 
 .player-profile img{
@@ -21,19 +47,4 @@ td img{
 }
 td{
   text-align: center;
-}
-.leaderboard{
-  display: inline;
-  float: right;
-  width: 400px;
-  position: absolute;
-  border-radius: 30px;
-}
-.leaderboard h1{
-  border-radius: 30px;
-}
-.players-container {
-    display: inline;
-    clear:right;
-    overflow: visible;
 }

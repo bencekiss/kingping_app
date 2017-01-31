@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+*{
+  margin: 0;
+}
 
 h1{
   background: #396bdf;
@@ -28,4 +31,5 @@ ul.navlist li{
 img {
   display: block;
   margin: 0 auto;
+  clear: both;
 }

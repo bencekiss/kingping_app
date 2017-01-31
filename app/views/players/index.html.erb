@@ -1,30 +1,34 @@
 <h1>Players in da house</h1>
 <h2><%= link_to "Add New Player", new_player_path %></h2>
 <h3><%= link_to "Make a Match!", new_game_path %></h3>
-<div class="players-container">
+
+<div class="container">
+  <div class="leaderboard">
+
+    <h1>Leaderboard</h1>
+    <table>
+      <thead>
+        <td>Alias</td><td>Name</td><td>Win Rate</td>
+      </thead>
+      <tbody>
+        <% @leaderboard.each do |p| %>
+        <tr>
+          <td><%= link_to image_tag(p[2]), player_path(p[3]) %> <td><%= p[1] %></td> <td><%= p[0] %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
   <% @players.each do |player| %>
   <div class="player-profile">
     <p>
-      <%= player.name %> (<%= player.nickname %>)<br>
+      <%= player.name %><br>
+      (<%= player.nickname %>)<br>
       Wins/Losses: <strong><%= player.wins %>/<%= player.losses %></strong><br>
       <%= link_to image_tag(player.url), player_path(player.id) %>
     </p>
   </div>
   <% end %>
-
-</div>
-
-<div class="leaderboard">
-
-  <h1>Leaderboard</h1>
-  <table>
-    <tbody>
-      <% @leaderboard.each do |p| %>
-      <tr>
-        <td><%= image_tag(p[2]) %> <td><%= p[1] %></td> <td><%= p[0] %> </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
 
 </div>
