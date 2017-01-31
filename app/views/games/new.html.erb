@@ -1,5 +1,6 @@
 <h1>Add a game</h1>
 <% players_array = Player.all.map {|player| [player.name, player.id] } %>
+<%= link_to "Back to games", games_url %>
 <%= form_for @game do |f| %>
   <p>
     <%= f.label :gamedate %><br>
