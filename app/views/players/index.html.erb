@@ -1,8 +1,9 @@
 <h1>Players in da house</h1>
+<h2><%= link_to "Add New Player", new_player_path %></h2>
 
 <% @players.each do |player| %>
   <p>
     <%= player.name %> | AKA: <%= player.nickname %> | Wins: <%= player.wins %> | Losses: <%= player.losses %><br>
-    <%= image_tag(player.url), 'players/player.id' %>
+    <%= link_to image_tag(player.url), "/players/#{player.id}" %>
   </p>
 <% end %>

@@ -1,0 +1,32 @@
+<h1>Edit Player Info</h1>
+
+<%= form_for @player do |f| %>
+  <p>
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname%>
+  </p>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :wins %>
+    <%= f.text_field :wins %>
+  </p>
+
+  <p>
+    <%= f.label :losses %>
+    <%= f.text_field :losses %>
+  </p>
+
+  <p>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.submit "Save" %> | <%= link_to "Delete", player_path(@player), method: :delete, data: {confirm: "Are you sure?"}%>
+  </p>
+<% end %>

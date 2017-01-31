@@ -1,0 +1,4 @@
+<p><%=@player.nickname %> | <%=@player.name %><br></p>
+<p>Total Wins: <%= @player.wins %> Total Losses: <%= @player.losses %></p>
+<%=link_to image_tag(@player.url), "/players" %>
+<p><%= link_to "Edit", "/players/#{@player.id}/edit" %> | <%= link_to "Delete", player_path(@player), method: :delete, data: {confirm: "Are you sure?"}%></p>
