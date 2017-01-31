@@ -1,0 +1,28 @@
+<h1>Edit a game and its data</h1>
+
+<%= form_for @game do |f| %>
+  <p>
+    <%= f.label :gamedate %><br>
+    <%= f.text_field :gamedate %>
+  </p>
+  <p>
+    <%= f.label :player1_id %><br>
+    <%= f.collection_select(:player1_id, Player.all, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :player2_id %><br>
+    <%= f.collection_select(:player2_id, Player.all, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :p1points %><br>
+    <%= f.text_field :p1points %>
+  </p>
+  <p>
+    <%= f.label :p2points %><br>
+    <%= f.text_field :p2points %>
+  </p>
+  <p>
+    <%= f.submit "Update game" %>
+  </p>
+
+<% end %>
