@@ -6,10 +6,34 @@
   display: inline-block;
   text-align: center;
   font-weight: bolder;
+  float: left;
 }
 
 .player-profile img{
   border: 2px solid;
   border-radius: 30px;
 
+}
+td img{
+  width: 50px;
+  height: 50px;
+  border-radius: 30px 30px
+}
+td{
+  text-align: center;
+}
+.leaderboard{
+  display: inline;
+  float: right;
+  width: 400px;
+  position: absolute;
+  border-radius: 30px;
+}
+.leaderboard h1{
+  border-radius: 30px;
+}
+.players-container {
+    display: inline;
+    clear:right;
+    overflow: visible;
 }

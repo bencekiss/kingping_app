@@ -1,16 +1,18 @@
 <h1>Players in da house</h1>
 <h2><%= link_to "Add New Player", new_player_path %></h2>
 <h3><%= link_to "Make a Match!", new_game_path %></h3>
+<div class="players-container">
+  <% @players.each do |player| %>
+  <div class="player-profile">
+    <p>
+      <%= player.name %> (<%= player.nickname %>)<br>
+      Wins/Losses: <strong><%= player.wins %>/<%= player.losses %></strong><br>
+      <%= link_to image_tag(player.url), player_path(player.id) %>
+    </p>
+  </div>
+  <% end %>
 
-<% @players.each do |player| %>
-<div class="player-profile">
-  <p>
-    <%= player.name %> (<%= player.nickname %>)<br>
-    Wins/Losses: <strong><%= player.wins %>/<%= player.losses %></strong><br>
-    <%= link_to image_tag(player.url), player_path(player.id) %>
-  </p>
 </div>
-<% end %>
 
 <div class="leaderboard">
 
