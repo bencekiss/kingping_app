@@ -1,11 +1,12 @@
 class PlayersController < ApplicationController
   def home
     @players = Player.all
-    
+
   end
 
   def index
     @players = Player.all
+    @leaderboard = Player.board
   end
 
   def new

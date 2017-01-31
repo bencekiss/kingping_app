@@ -11,3 +11,18 @@
   </p>
 </div>
 <% end %>
+
+<div class="leaderboard">
+
+  <h1>Leaderboard</h1>
+  <table>
+    <tbody>
+      <% @leaderboard.each do |p| %>
+      <tr>
+        <td><%= image_tag(p[2]) %> <td><%= p[1] %></td> <td><%= p[0] %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
