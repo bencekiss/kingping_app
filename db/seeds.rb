@@ -30,11 +30,11 @@ Game.create(
   p2points: 11
 )
 
-GamePlayer.create(
-  game_id: 1,
-  player_id: 1
-)
-GamePlayer.create(
-  game_id: 1,
-  player_id: 2
-)
+# GamePlayer.create(
+#   game_id: 1,
+#   player_id: 1
+# )
+# GamePlayer.create(
+#   game_id: 1,
+#   player_id: 2
+# )
