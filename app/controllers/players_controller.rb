@@ -1,4 +1,9 @@
 class PlayersController < ApplicationController
+  def home
+    @players = Player.all
+    
+  end
+
   def index
     @players = Player.all
   end
@@ -36,7 +41,7 @@ class PlayersController < ApplicationController
   def destroy
     @player = Player.find(params[:id])
     @player.destroy
-    redirect_to players
+    redirect_to players_path
 
   end
 
