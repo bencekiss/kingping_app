@@ -38,7 +38,25 @@
 .player-profile img{
   border: 2px solid;
   border-radius: 30px;
-
+}
+.links{
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  overflow: hidden;
+}
+.links h3{
+  background-color: #396bdf;
+  color: white;
+  padding: 15px;
+  margin: auto;
+  line-height: 1.3em;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.links h3 a{
+  text-decoration: none;
+  color: white;
 }
 td img{
   width: 50px;

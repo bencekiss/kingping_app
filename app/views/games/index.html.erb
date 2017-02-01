@@ -1,13 +1,15 @@
 
 
 <h1>All games in place</h1>
-<%= link_to "Go back to the main page", root_url %><br>
-<%= link_to "Add a match!", new_game_url %>
+<p><%= link_to "Go back to the main page", root_url %></p>
+<p><%= link_to "Add a match!", new_game_url %></p>
 <% @games.each do |game| %>
-  <p>
-    <% first_player = Player.find(game.player1_id).name %>
-    <% second_player = Player.find(game.player2_id).name %>
-    <%= game.gamedate %> | <%= first_player %> <%= game.p1points %> : <%= game.p2points %> <%= second_player %>
-    <%= link_to "View", game_path(game) %> | <%= link_to "Edit", edit_game_path(game) %> | <%= link_to "Delete", game, method: :delete, data: {confirm: "Are you sure you want to delete the game?"} %>
-  </p>
+  <div class="games">
+    <p>
+      <% first_player = Player.find(game.player1_id).name %>
+      <% second_player = Player.find(game.player2_id).name %>
+      <%= game.gamedate %> | <%= first_player %> <%= game.p1points %> : <%= game.p2points %> <%= second_player %>
+      <%= link_to "View", game_path(game) %> | <%= link_to "Edit", edit_game_path(game) %> | <%= link_to "Delete", game, method: :delete, data: {confirm: "Are you sure you want to delete the game?"} %>
+    </p>
+  </div>
 <% end %>

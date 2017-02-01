@@ -21,6 +21,13 @@ h1{
   background: #396bdf;
   padding: 30px;
   color: white;
+  text-align: center;
+}
+h2{
+  background: #396bdf;
+  padding: 30px;
+  color: white;
+  text-align: center;
 }
 
 ul.navlist li{
