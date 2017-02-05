@@ -15,6 +15,8 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
+    @player.wins = 0
+    @player.losses = 0
     if @player.save
       redirect_to "/players"
     else
@@ -37,6 +39,7 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
+    @games = @player.games
   end
 
   def destroy

@@ -16,9 +16,10 @@ class GamesController < ApplicationController
     if @game.save
       @game.players << Player.find(@game.player1_id)
       @game.players << Player.find(@game.player2_id)
+      params = {}
       redirect_to games_url
     else
-      redirect_to new_game_url
+      render :new
     end
   end
   def edit

@@ -1,4 +1,105 @@
-<p><%=@player.nickname %> | <%=@player.name %><br></p>
-<p>Total Wins: <%= @player.wins %> Total Losses: <%= @player.losses %></p>
-<%=link_to image_tag(@player.url), "/players" %>
-<p><%= link_to "Edit", "/players/#{@player.id}/edit" %> | <%= link_to "Delete", player_path(@player), method: :delete, data: {confirm: "Are you sure?"}%></p>
+<div class="show">
+  <table class="playerinfotable">
+    <thead>
+      <tr>
+        <td colspan="3">Player Info</td>
+      </tr>
+    </thead>
+    <tbody>
+      <th rowspan="5"><%= image_tag(@player.url) %></th>
+      <tr>
+        <td class="right">Nickname</td>
+        <td class="left"><%=@player.nickname %></td>
+      </tr>
+      <tr>
+        <td class="right">Name</td>
+        <td class="left"><%=@player.name %></td>
+      </tr>
+      <tr>
+        <td class="right">Total Wins</td>
+        <td class="left"><%= @player.wins %></td>
+      </tr>
+      <tr>
+        <td class="right">Total Losses</td>
+        <td class="left"><%= @player.losses %></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3"><%= link_to "Edit", "/players/#{@player.id}/edit" %> | <%= link_to "Delete", player_path(@player), method: :delete, data: {confirm: "Are you sure?"}%></td>
+      </tr>
+    </tfoot>
+  </table>
+
+
+
+  <table class="playergameinfo">
+    <thead>
+      <tr>
+        <td colspan="6">Games <%= @player.name %> played</td>
+      </tr>
+      <tr>
+        <td colspan="3">Winner</td>
+        <td colspan="3">Loser</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @games.each do |game| %>
+      <% winner_player = game.winner %>
+      <% loser_player = game.loser %>
+        <tr>
+          <td class="td_img">
+            <%= link_to image_tag(winner_player.url), player_path(winner_player.id) %>
+          </td>
+          <td>
+            <% if @player == winner_player %>
+              <strong><%= winner_player.name %></strong>
+            <% else %>
+              <%= winner_player.name %>
+            <% end %>
+          </td>
+          <td class="right">
+            <% if winner_player.id == game.player1_id %>
+              <% if @player.id == game.player1_id %>
+                <strong><%= game.p1points %></strong>
+              <% else %>
+                <%= game.p1points %>
+              <% end %>
+            <% else %>
+              <% if @player.id == game.player2_id %>
+                <strong><%= game.p2points %></strong>
+              <% else %>
+                <%= game.p2points %>
+              <% end %>
+            <% end %>
+          </td>
+          <td class="left">
+            <% if loser_player.id == game.player1_id %>
+              <% if @player.id == game.player1_id %>
+                <strong><%= game.p1points %></strong>
+              <% else %>
+                <%= game.p1points %>
+              <% end %>
+            <% else %>
+              <% if @player.id == game.player2_id %>
+                <strong><%= game.p2points %></strong>
+              <% else %>
+                <%= game.p2points %>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <% if @player == loser_player %>
+              <strong><%= loser_player.name %></strong>
+            <% else %>
+              <%= loser_player.name %>
+            <% end %>
+          </td>
+          <td class="td_img">
+            <%= link_to image_tag(loser_player.url), player_path(loser_player.id) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

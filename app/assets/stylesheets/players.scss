@@ -73,3 +73,44 @@ td img{
 td{
   text-align: center;
 }
+
+
+// show player page
+.show{
+  text-align: center;
+}
+.playerinfotable, .playergameinfo{
+  display: inline-table;;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-collapse: collapse;
+  // border-right: 1px solid white;
+  // border-left: 1px solid white;
+  margin: 30px 20px;
+}
+.playerinfotable img{
+  border-radius: 15px;
+}
+.playerinfotable thead td,
+.playergameinfo thead td{
+  font-size: 1.5em;
+  font-weight: 450;
+  padding: 1.5em;
+  // border-bottom: 1px solid white;
+}
+.playerinfotable tfoot{
+
+}
+.right{
+  text-align: right;
+  // border-top: 1px solid white;
+  // border-right: 1px solid white;
+  // border-bottom: 1px solid white;
+}
+.left{
+  text-align: left;
+  // border-bottom: 1px solid white;
+  // border-top: 1px solid white;
+  // border-left: 1px solid white;
+}
