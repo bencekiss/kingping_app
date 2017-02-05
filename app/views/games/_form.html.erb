@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.text_field :gamedate %>
+          <%= f.date_field :gamedate, value: Date.today %>
         </td>
         <td>
           <%= f.collection_select(:player1_id, Player.all, :id, :name) %>
