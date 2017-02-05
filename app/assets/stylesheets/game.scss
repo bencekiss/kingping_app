@@ -68,5 +68,15 @@ td img{
   text-align: center;
   line-height: 3.5em;
   padding: 1em;
-  
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+}
+.form_table tfoot td input{
+  text-decoration: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: #c3d6e9;
+  border: none;
 }

@@ -22,25 +22,21 @@ header{
   text-transform: uppercase;
 }
 .headlines{
-  font-weight: 600;
+  font-weight: 500;
 
 }
 
 header a:visited{
   color: white;
 }
-h1{
+h1, h2{
   background: #396bdf;
   padding: 30px;
   color: white;
   text-align: center;
-}
-h2{
-
-  background: #396bdf;
-  padding: 30px;
-  color: white;
-  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
 }
 .navlist{
   margin-bottom: 0;
