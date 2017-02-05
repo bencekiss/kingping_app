@@ -1,10 +1,16 @@
 body {
-  background-color: #fff;
+  background-image: url("/assets/background.jpg");
+  background-size: cover;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  margin: 0;
+}
+main{
   margin: 0 33px;
+  background-color: rgba(120, 176, 226, 0.85);
+  // text-align: center;
 }
 
 p, ol, ul, td {
@@ -21,10 +27,14 @@ pre {
 }
 
 a {
-  color: #000;
-
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   &:visited {
-    color: #666;
+    color: white;
   }
 
   &:hover {

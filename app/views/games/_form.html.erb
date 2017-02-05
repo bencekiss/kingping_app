@@ -1,0 +1,45 @@
+<table class="form_table">
+  <%= form_for game do |f| %>
+  <tbody>
+      <tr>
+        <td>
+          <%= f.label :gamedate, "Game Date" %>
+        </td>
+        <td>
+            <%= f.label :player1_id, "Player #1" %>
+        </td>
+        <td>
+          <%= f.label :player2_id, "Player #2"%>
+        </td>
+        <td>
+          <%= f.label :p1points, "Points: Player #1" %>
+        </td>
+        <td>
+          <%= f.label :p2points, "Points: Player #2" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.text_field :gamedate %>
+        </td>
+        <td>
+          <%= f.collection_select(:player1_id, Player.all, :id, :name) %>
+        </td>
+        <td>
+          <%= f.collection_select(:player2_id, Player.all, :id, :name) %>
+        </td>
+        <td>
+          <%= f.text_field :p1points %>
+        </td>
+        <td>
+          <%= f.text_field :p2points %>
+        </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="5"><%= f.submit "Add game" %></td>
+    </tr>
+  </tfoot>
+  <% end %>
+</table>

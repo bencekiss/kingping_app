@@ -1,0 +1,43 @@
+<div class="game">
+  <h3><%= game.gamedate %></h3>
+  <table class="gametable">
+    <% winner_player = game.winner %>
+    <% loser_player = game.loser %>
+    <tbody class="gamebody">
+      <tr class="win_player">
+        <td><%= link_to image_tag(winner_player.url), player_path(winner_player.id) %> <%= winner_player.name %></td>
+      </tr>
+      <tr class="win_points">
+        <td>
+          <% if winner_player.id == game.player1_id %>
+            <%= game.p1points %>
+          <% else %>
+            <%= game.p2points %>
+          <% end %>
+        </td>
+      </tr>
+      <tr></tr>
+      <tr class="loser_points">
+        <td>
+          <% if loser_player.id == game.player1_id %>
+            <%= game.p1points %>
+          <% else %>
+            <%= game.p2points %>
+          <% end %>
+        </td>
+      </tr>
+      <tr class="loser_player">
+        <td><%= loser_player.name %> <%= link_to image_tag(loser_player.url), player_path(loser_player.id) %></td>
+      </tr>
+    </tbody>
+    <tfoot class="gamefoot">
+      <tr>
+        <td>
+          <%= link_to "View", game_path(game) %> | <%= link_to "Edit", edit_game_path(game) %> | <%= link_to "Delete", game, method: :delete, data: {confirm: "Are you sure you want to delete the game?"} %>
+        </td>
+      </tr>
+    </tfoot>
+
+  </table>
+
+</div>

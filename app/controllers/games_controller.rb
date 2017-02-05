@@ -11,9 +11,11 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     # @game_player1 = GamePlayer.new(@game.id, @game.player1_id)
     # @game_player2 = GamePlayer.new(@game.id, @game.player2_id)
-    @game.winner
+    @game.points
 
     if @game.save
+      @game.players << Player.find(@game.player1_id)
+      @game.players << Player.find(@game.player2_id)
       redirect_to games_url
     else
       redirect_to new_game_url
